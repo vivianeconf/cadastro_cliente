@@ -7,7 +7,6 @@
 </head>
     <body>
 
-
         <div>
             <h2>Cadastro de cliente</h2>
 
@@ -17,32 +16,33 @@
                     <label><?= $mensagemErro ?></label>
                 <?php } ?>
 
+
                 <p class= "trick">Nome: <?p>
-                <input id="campoNome" type="text" name="nome" value="<?= $nome ?>" placeholder="Informe um nome...">
+                <input id="campoNome" type="text" name="nome" value="<?= $_SESSION['nome']?>" placeholder="Informe um nome...">
 
                 <p class= "trick">CPF: <?p>
-                <input type="text" name="cpf" value="<?= $cpf ?>" placeholder="Informe um CPF..." >
+                <input type="text" name="cpf" value="<?= $_SESSION['cpf'] ?>" placeholder="Informe um CPF..." maxlength = "11" >
 
                 <p class= "trick">CNPJ: <?p>
-                <input type="text" name="cnpj" value="<?= $cnpj ?>" placeholder="Informe um CNPJ...">
+                <input type="text" name="cnpj" value="<?= $_SESSION['cnpj'] ?>" placeholder="Informe um CNPJ..." maxlength = "14">
 
                 <p class= "trick">E-mail: <?p>
-                <input type="email" name="email" value="<?= $email ?>" placeholder="Informe um e-mail..." >
+                <input type="email" name="email" value="<?= $_SESSION['email'] ?>" placeholder="Informe um e-mail..." >
 
                 <p class= "trick">Telefone: <?p>
-                <input type="text" name="telefone" value="<?= $telefone ?>" placeholder="Informe um telefone..." >
+                <input type="text" name="telefone" value="<?= $_SESSION['telefone'] ?>" placeholder="Informe um telefone..." >
 
                 <p class= "trick">Logradouro: <?p>
-                <input type="text" name="logradouro" value="<?= $logradouro ?>" placeholder="Informe um logradouro...">
+                <input type="text" name="logradouro" value="<?= $_SESSION['logradouro'] ?>" placeholder="Informe um logradouro...">
 
                 <p class= "trick">Número: <?p>
-                <input type="text" name="numero" value="<?= $numero ?>" placeholder="Informe um número...">
+                <input type="text" name="numero" value="<?= $_SESSION['numero'] ?>" placeholder="Informe um número...">
 
                 <p class= "trick">Bairro: <?p>
-                <input type="text" name="bairro" value="<?= $bairro ?>" placeholder="Informe um bairro..."  > 
+                <input type="text" name="bairro" value="<?= $_SESSION['bairro'] ?>" placeholder="Informe um bairro..."  > 
 
                 <p class= "trick">CEP: <?p>
-                <input type="text" name="cep" value="<?= $cep ?>" placeholder="Informe um CEP...">
+                <input type="text" name="cep" value="<?= $_SESSION['cep'] ?>" placeholder="Informe um CEP...">
             
                 <p class= "trick">Estado: <?p>
                 <select name="estado">
