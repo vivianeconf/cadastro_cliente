@@ -25,7 +25,7 @@ if (!empty($_POST)) {
         $mensagem .= "Favor digitar seu nome...<br>"; 
         $erro = 1;
     }
-    if(strlen($cpf) != 11){
+    if(strlen($cpf)!= 11){
         $mensagem .= "Digite todos os campos do CPF<br>";
         $erro = 1;
     }
@@ -38,8 +38,8 @@ if (!empty($_POST)) {
         $mensagem .= "Favor digitar o e-mail corretamente...<br>";
         $erro = 1;
     }
-    if(strlen($telefone != 10)){
-        $mensagem .= "Favor adicionar todos os 10 digitos do telefone...<br>";
+    if(strlen($telefone) != 10){
+        $mensagem .= "Favor adicionar todos os 11 digitos do celular...<br>";
         $erro = 1;
     }
     if(strlen($celular) != 11){
@@ -72,7 +72,7 @@ if (!empty($_POST)) {
     }
 
     if ($erro == 0) {
-        $mensagem = "CADASTRO REALIZADO COM SUCESSO!";
+        $mensagem = "CADASTRO REALIZADO COM SUCESSO!<br>";
     }
 }
 

@@ -62,7 +62,7 @@
                 <br>
                 <br>
                 
-                <button type="submit" value="Submit">Salvar</button>
+                <button  type="submit" value="Submit">Salvar</button>
                 <button type= "reset" value= "reset">Limpar dados</button>
                 <br><br>
             </form>
