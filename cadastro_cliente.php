@@ -4,8 +4,6 @@ $estados = array("Rio Grande do Sul", "Santa Catarina", "São Paulo", "Rio de Ja
 $cidades = array("Erechim", "Fernandópolis", " Porto Alegre", "São Paulo", "Rio de Janeiro", "Passo Fundo");
 
 $erro = 0;
-session_start ();
-
 if (!empty($_POST)) {
     
     $nome = $_POST['nome'];
@@ -13,6 +11,7 @@ if (!empty($_POST)) {
     $cnpj = $_POST['cnpj'] ;
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
+    $celular = $_POST['celular'];
     $logradouro = $_POST['logradouro'];
     $numero = $_POST['numero'];
     $bairro = $_POST['bairro'];
@@ -20,65 +19,66 @@ if (!empty($_POST)) {
     $estado = isset($_POST['estado']) ? $_POST['estado'] : null; 
     $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;    
 
-    $mensagemErro = "";
-    $mensagemFinalizada = "";
+    $mensagem = "";
 
-    $_SESSION['nome']=$_POST['nome'];
-    $_SESSION['cpf']=$_POST['cpf'];
-    $_SESSION['cnpj']=$_POST['cnpj'];
-    $_SESSION['email']=$_POST['email'];
-    $_SESSION['telefone']=$_POST['telefone'];
-    $_SESSION['logradouro']=$_POST['logradouro'];
-    $_SESSION['numero']=$_POST['numero'];
-    $_SESSION['bairro']=$_POST['bairro'];
-    $_SESSION['cep']=$_POST['cep'];
-    $_SESSION['estado']=$_POST['estado'];
-    $_SESSION['cidade']=$_POST['cidade'];
-
-
-    if(empty($nome)){
-        $mensagemErro .= "Favor digitar seu nome...<br>"; 
+    if(empty($_POST["nome"])){
+        $mensagem .= "Favor digitar seu nome...<br>"; 
         $erro = 1;
     }
-    if(empty($cpf)){
-        $mensagemErro .= "Favor digitar os 11 números do CPF...<br>";
+    if(strlen($cpf) != 11){
+        $mensagem .= "Digite todos os campos do CPF<br>";
         $erro = 1;
     }
-    if(empty($cnpj) == 14){
-        $mensagemErro .= "Favor digitar os 14 números do CNPJ...<br>";
+    if(strlen($cnpj)!= 14){
+        $mensagem .= "Favor digitar os 14 números do CNPJ...<br>";
         $erro = 1;
     }
+
     if(strlen($email)< 8 || strstr($email, '@')== FALSE){
-        $mensagemErro .= "Favor digitar o e-mail corretamente...<br>";
+        $mensagem .= "Favor digitar o e-mail corretamente...<br>";
+        $erro = 1;
+    }
+    if(strlen($telefone != 10)){
+        $mensagem .= "Favor adicionar todos os 10 digitos do telefone...<br>";
+        $erro = 1;
+    }
+    if(strlen($celular) != 11){
+        $mensagem .= "Favor adicionar todos os 11 digitos do celular...<br>";
         $erro = 1;
     }
     if(empty($logradouro)){
-        $mensagemErro .= "Favor digitar o logradouro...<br>";
+        $mensagem .= "Favor digitar o logradouro...<br>";
         $erro = 1;
     }
     if(empty($numero)){
-        $mensagemErro .= "Favor digitar o número...<br>";
-        $erro = 1;
-    }
-    if(empty($cep)){
-        $mensagemErro .= "Favor digitar o cep...<br>";
+        $mensagem .= "Favor digitar o número...<br>";
         $erro = 1;
     }
     if(empty($bairro)){
-        $mensagemErro .= "Favor digitar seu bairro...<br>"; 
+        $mensagem .= "Favor digitar seu bairro...<br>"; 
+        $erro = 1;
+    }
+    if(strlen($cep) != 8){
+        $mensagem .= "Favor digitar o cep...<br>";
         $erro = 1;
     }
     if($estado == '*'){
-        $mensagemErro .= "Favor selecione seu estado...<br>"; 
+        $mensagem .= "Favor selecione seu estado...<br>"; 
         $erro = 1;
     }
     if($cidade == '*'){
-        $mensagemErro .= "Favor selecione sua cidade...<br>"; 
+        $mensagem .= "Favor selecione sua cidade...<br>"; 
         $erro = 1;
+    }
+
+    if ($erro == 0) {
+        $mensagem = "CADASTRO REALIZADO COM SUCESSO!";
     }
 }
 
-$nome= ""; $cpf = ""; $cnpj = ""; $email = ""; $telefone = ""; $logradouro = ""; $numero = "";
-$cep = ""; $bairro = ""; $estado = ""; $cidade = "";
+if ($erro == 0) {
+    $nome= ""; $validarCpfouCnpj = ""; $cpf = ""; $cnpj = ""; $email = ""; $telefone = ""; $celular = ""; $logradouro = ""; $numero = "";
+    $cep = ""; $bairro = ""; $estado = ""; $cidade = "";    
+}
 
 require 'MainView.php';
