@@ -7,11 +7,9 @@ $erro = 0;
 if (!empty($_POST)) {
     
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $cnpj = $_POST['cnpj'] ;
+    $validarcpfoucnpj = $_POST['validarcpfoucnpj'];
     $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $celular = $_POST['celular'];
+    $validarTelouCel = $_POST['validarTelouCel'];
     $logradouro = $_POST['logradouro'];
     $numero = $_POST['numero'];
     $bairro = $_POST['bairro'];
@@ -25,26 +23,23 @@ if (!empty($_POST)) {
         $mensagem .= "Favor digitar seu nome...<br>"; 
         $erro = 1;
     }
-    if(strlen($cpf)!= 11){
-        $mensagem .= "Digite todos os campos do CPF<br>";
-        $erro = 1;
-    }
-    if(strlen($cnpj)!= 14){
-        $mensagem .= "Favor digitar os 14 números do CNPJ...<br>";
-        $erro = 1;
-    }
 
+    if(strlen ($validarcpfoucnpj) != 11){
+        if(strlen ($validarcpfoucnpj) != 14){
+            $mensagem .= "Favor digitar todos os números do documento...<br>";
+            $erro = 1;
+        }
+    }
     if(strlen($email)< 8 || strstr($email, '@')== FALSE){
         $mensagem .= "Favor digitar o e-mail corretamente...<br>";
         $erro = 1;
     }
-    if(strlen($telefone) != 10){
-        $mensagem .= "Favor adicionar todos os 11 digitos do celular...<br>";
-        $erro = 1;
-    }
-    if(strlen($celular) != 11){
-        $mensagem .= "Favor adicionar todos os 11 digitos do celular...<br>";
-        $erro = 1;
+
+    if(strlen ($validarTelouCel) != 10){
+        if(strlen ($validarTelouCel) != 11){
+            $mensagem .= "Favor digitar todos os números do seu Telefone/Celular...<br>";
+            $erro = 1;
+        }
     }
     if(empty($logradouro)){
         $mensagem .= "Favor digitar o logradouro...<br>";
@@ -72,12 +67,12 @@ if (!empty($_POST)) {
     }
 
     if ($erro == 0) {
-        $mensagem = "CADASTRO REALIZADO COM SUCESSO!<br>";
+        $mensagem .= "CADASTRO REALIZADO COM SUCESSO!<br>";
     }
 }
 
 if ($erro == 0) {
-    $nome= ""; $validarCpfouCnpj = ""; $cpf = ""; $cnpj = ""; $email = ""; $telefone = ""; $celular = ""; $logradouro = ""; $numero = "";
+    $nome= ""; $validarcpfoucnpj = ""; $email = ""; $validarTelouCel = ""; $logradouro = ""; $numero = "";
     $cep = ""; $bairro = ""; $estado = ""; $cidade = "";    
 }
 
