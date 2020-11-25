@@ -58,12 +58,12 @@ if (!empty($_POST)) {
             $erro = 1;
         }
 
-        if(!empty($telefone) && strlen ($telefone) != 8){
+        if(!empty($telefone) && strlen ($telefone) != 10){
             $mensagem .= "Favor digitar todos os números do telefone...<br>";
             $erro = 1;
         }
         
-        if(!empty($celular) && strlen ($celular) != 9){
+        if(!empty($celular) && strlen ($celular) != 11){
              $mensagem .= "Favor digitar todos os números do celular...<br>";
             $erro = 1;
         }  

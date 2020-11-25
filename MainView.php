@@ -27,10 +27,10 @@
                 <input type="email" name="email" value="<?php echo "$email"?>" placeholder="Informe um e-mail..." ><br><br>
 
                 <strong>Telefone </strong><br>
-                <input type="text" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "8" maxlength= "8"><br><br>
+                <input type="text" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "10" maxlength= "10"><br><br>
 
                 <strong>Celular </strong><br>
-                <input type="text" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "9" maxlength= "9"><br><br>
+                <input type="text" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "11" maxlength= "11"><br><br>
 
                 <strong>Logradouro </strong><br>
                 <input type="text" name="logradouro" value="<?php echo "$logradouro" ?>" placeholder="Informe um logradouro..."><br><br>
