@@ -11,19 +11,26 @@
 
             <form action="cadastro_cliente.php" method="post" >
 
-                <label><?= isset($mensagem) ? $mensagem : "" ?></label>
-                
+                <label class= "vermelho"><?= isset($mensagem) ? $mensagem : "" ?></label>
+                <label class= "verde"><?= isset($mensagem_verde) ? $mensagem_verde : "" ?></label>
+
                 <strong>Nome </strong><br>
                 <input id="campoNome" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
 
-                <strong>CPF/CNPJ </strong> <br>
-                <input type="text" name="validarcpfoucnpj" value="<?php echo "$validarcpfoucnpj" ?>" placeholder="Informe CPF ou CNPJ..." size = "11" maxlength = "14" ><br><br>
+                <strong>CPF </strong> <br>
+                <input type="text" name="cpf" value="<?php echo "$cpf" ?>" placeholder="Informe o CPF..." size = "11" maxlength = "11" ><br><br>
+
+                <strong>CNPJ </strong> <br>
+                <input type="text" name="cnpj" value="<?php echo "$cnpj" ?>" placeholder="Informe o CNPJ..." size = "14" maxlength = "14" ><br><br>
 
                 <strong>E-mail </strong><br>
                 <input type="email" name="email" value="<?php echo "$email"?>" placeholder="Informe um e-mail..." ><br><br>
 
-                <strong>Telefone/Celular </strong><br>
-                <input type="text" name="validarTelouCel" value="<?php echo "$validarTelouCel"?>" placeholder="Informe um telefone ou celular..." size = "10" maxlength= "11"><br><br>
+                <strong>Telefone </strong><br>
+                <input type="text" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "8" maxlength= "8"><br><br>
+
+                <strong>Celular </strong><br>
+                <input type="text" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "9" maxlength= "9"><br><br>
 
                 <strong>Logradouro </strong><br>
                 <input type="text" name="logradouro" value="<?php echo "$logradouro" ?>" placeholder="Informe um logradouro..."><br><br>
@@ -54,8 +61,8 @@
                         <?php } ?>
                 </select>
                 <br><br>
-                <button  type="submit" value="Submit">Salvar</button>
-                <button type= "reset" value= "reset" >Limpar dados</button>
+                <button  type="submit" value="Submit" class="salvar">Salvar</button>
+                <button type= "submit" name="limpar" class="limpar">Limpar</button>
                 <br><br>
             </form>
         </div>    
