@@ -15,37 +15,42 @@
                 <label class= "verde"><?= isset($mensagem_verde) ? $mensagem_verde : "" ?></label>
 
                 <strong>Nome </strong><br>
-                <input id="campoNome" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
+                <input id="nome" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
 
-                <strong>CPF </strong> <br>
-                <input type="text" name="cpf" value="<?php echo "$cpf" ?>" placeholder="Informe o CPF..." size = "11" maxlength = "11" ><br><br>
+                <strong>Documento </strong> <br>
+                <select id="tipo" name="tipo">
+                    <option value="*">Selecione seu documento</option>
+                    <option value="1">CPF</option>
+                    <option value="2">CNPJ</option>
+                </select>
 
-                <strong>CNPJ </strong> <br>
-                <input type="text" name="cnpj" value="<?php echo "$cnpj" ?>" placeholder="Informe o CNPJ..." size = "14" maxlength = "14" ><br><br>
+                <input type="text" id="cpf" name="cpf" value="<?php echo "$cpf" ?>" placeholder="Informe o CPF..." size = "11" maxlength = "11" >
+
+                <input type="text" id="cnpj" name="cnpj" value="<?php echo "$cnpj" ?>" placeholder="Informe o CNPJ..." size = "14" maxlength = "14" ><br><br>
 
                 <strong>E-mail </strong><br>
-                <input type="email" name="email" value="<?php echo "$email"?>" placeholder="Informe um e-mail..." ><br><br>
+                <input type="email" id="email" name="email" value="<?php echo "$email"?>" placeholder="Informe um e-mail..." ><br><br>
 
                 <strong>Telefone </strong><br>
-                <input type="text" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "10" maxlength= "10"><br><br>
+                <input type="text" id="telefone" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "10" maxlength= "10"><br><br>
 
                 <strong>Celular </strong><br>
-                <input type="text" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "11" maxlength= "11"><br><br>
+                <input type="text" id="celular" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "11" maxlength= "11"><br><br>
 
                 <strong>Logradouro </strong><br>
-                <input type="text" name="logradouro" value="<?php echo "$logradouro" ?>" placeholder="Informe um logradouro..."><br><br>
+                <input type="text" id="logradouro" name="logradouro" value="<?php echo "$logradouro" ?>" placeholder="Informe um logradouro..."><br><br>
 
                 <strong>Número </strong><br>
-                <input type="text" name="numero" value="<?php echo "$numero"?>" placeholder="Informe um número..."><br><br>
+                <input type="text" id="numero" name="numero" value="<?php echo "$numero"?>" placeholder="Informe um número..."><br><br>
 
                 <strong>Bairro </strong><br>
-                <input type="text" name="bairro" value="<?php echo "$bairro" ?>" placeholder="Informe um bairro..."  > <br><br>
+                <input type="text" id="bairro" name="bairro" value="<?php echo "$bairro" ?>" placeholder="Informe um bairro..."  > <br><br>
 
                 <strong>CEP </strong><br>
-                <input type="text" name="cep" value="<?php echo "$cep" ?>" placeholder="Informe um CEP..." size= "8" maxlength= "8"><br><br>
+                <input type="text" id="cep" name="cep" value="<?php echo "$cep" ?>" placeholder="Informe um CEP..." size= "8" maxlength= "8"><br><br>
             
                 <strong>Estado </strong><br>
-                <select name="estado">
+                <select id="estado" name="estado">
                     <option value="*">Escolha o estado</option>
                     <?php foreach ($estados as $i => $estado) {?>
                         <option value="<?= $i ?>"> <?= $estado ?> </option>
@@ -54,7 +59,7 @@
                 <br><br>
 
                 <strong>Cidade </strong><br>
-                <select name="cidade">
+                <select id="cidade" name="cidade">
                     <option value="*">Escolha a cidade</option>
                     <?php foreach ($cidades as $i => $cidade ) {?>
                         <option value="<?= $i ?>"> <?= $cidade ?> </option>
@@ -66,6 +71,9 @@
                 <br><br>
             </form>
         </div>    
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    
+        <script src="teste.js"></script>
 
     </body>
 </html>

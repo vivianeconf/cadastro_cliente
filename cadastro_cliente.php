@@ -12,6 +12,7 @@ if (!empty($_POST)) {
 
         // Validar se os campos EXISTEM
         $nome = !empty($_POST["nome"]) ? $_POST["nome"] : null;
+        $tipo = !empty($_POST["tipo"]) ? $_POST["tipo"] : null;
         $cpf = !empty($_POST["cpf"]) ? $_POST["cpf"] : null;
         $cnpj = !empty($_POST["cnpj"]) ? $_POST["cnpj"] : null;
         $email = !empty ($_POST['email']) ? $_POST["email"] : null ;
@@ -22,7 +23,10 @@ if (!empty($_POST)) {
         $bairro = !empty ($_POST['bairro']) ? $_POST["bairro"] : null;
         $cep = !empty ($_POST['cep']) ? $_POST["cep"] : null;
         $estado = isset($_POST['estado']) ? $_POST['estado'] : null; 
-        $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null;    
+        $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : null; 
+        
+        
+        $documento = !empty($cpf) ? $cpf : $cnpj;
 
         // Validar a OBRIGATORIEDADE dos campos
         $mensagem = "";
@@ -96,7 +100,6 @@ if (!empty($_POST)) {
         if ($erro == 0) {
             $mensagem_verde .= "CADASTRO REALIZADO COM SUCESSO!<br>";
         }
-
     }
 }
 
