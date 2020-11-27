@@ -7,7 +7,6 @@
 </head>
     <body>
         <div>
-            <p id="teste"></p>
             <h2>Cadastro de cliente</h2>
 
             <form action="cadastro_cliente.php" method="post" >
