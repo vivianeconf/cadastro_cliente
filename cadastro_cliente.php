@@ -12,11 +12,12 @@ if (!empty($_POST)) {
 
         // Validar se os campos EXISTEM
         $nome = !empty($_POST["nome"]) ? $_POST["nome"] : null;
-        $tipo = !empty($_POST["tipo"]) ? $_POST["tipo"] : null;
+        $documento = !empty($_POST["documento"]) ? $_POST["documento"] : null;
         $cpf = !empty($_POST["cpf"]) ? $_POST["cpf"] : null;
         $cnpj = !empty($_POST["cnpj"]) ? $_POST["cnpj"] : null;
         $email = !empty ($_POST['email']) ? $_POST["email"] : null ;
-        $telefone = !empty($_POST['telefone']) ? $_POST["telefone"] : null;
+        $telefone = !empty($_POST["telefone"]) ? $_POST["telefone"] : null;
+        $telefone_fixo = !empty($_POST['telefone_fixo']) ? $_POST["telefone_fixo"] : null;
         $celular = !empty($_POST['celular']) ? $_POST["celular"] : null;
         $logradouro = !empty ($_POST['logradouro']) ? $_POST["logradouro"] : null;
         $numero = !empty ($_POST['numero']) ? $_POST["numero"] : null;
@@ -27,10 +28,10 @@ if (!empty($_POST)) {
         
         
         $documento = !empty($cpf) ? $cpf : $cnpj;
+        $telefone = !empty($telefone_fixo) ? $telefone_fixo : $celular;
 
         // Validar a OBRIGATORIEDADE dos campos
         $mensagem = "";
-        $mensagem_verde = "";
     
         if(empty($nome)) {
             $mensagem .= "Favor digitar o seu nome...<br>";
@@ -57,12 +58,12 @@ if (!empty($_POST)) {
             $erro = 1;
         }
     
-        if (empty($telefone) && empty($celular)) {
-            $mensagem .= "Favor informar um número de telefone ou celular...<br>";
+        if (empty($telefone_fixo) && empty($celular)) {
+            $mensagem .= "Favor informar um número de telefone fixo ou celular...<br>";
             $erro = 1;
         }
 
-        if(!empty($telefone) && strlen ($telefone) != 10){
+        if(!empty($telefone_fixo) && strlen ($telefone_fixo) != 10){
             $mensagem .= "Favor digitar todos os números do telefone...<br>";
             $erro = 1;
         }
@@ -96,16 +97,11 @@ if (!empty($_POST)) {
             $mensagem .= "Favor selecione sua cidade...<br>"; 
             $erro = 1;
         }
-    
-        if ($erro == 0) {
-            $mensagem_verde .= "CADASTRO REALIZADO COM SUCESSO!<br>";
-        }
     }
 }
-
 if ($erro == 0) {
-    $nome= ""; $cpf = ""; $cnpj = ""; $email = ""; $telefone = ""; $celular = ""; $logradouro = ""; $numero = "";
-    $cep = ""; $bairro = ""; $estado = ""; $cidade = "";    
+    $nome= ""; $cpf = ""; $cnpj = ""; $email = ""; $telefone_fixo = ""; $celular = ""; $logradouro = ""; 
+    $numero = ""; $cep = ""; $bairro = ""; $estado = ""; $cidade = "";    
 }
 
 require 'MainView.php';

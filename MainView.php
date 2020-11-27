@@ -7,18 +7,18 @@
 </head>
     <body>
         <div>
+            <p id="teste"></p>
             <h2>Cadastro de cliente</h2>
 
             <form action="cadastro_cliente.php" method="post" >
 
                 <label class= "vermelho"><?= isset($mensagem) ? $mensagem : "" ?></label>
-                <label class= "verde"><?= isset($mensagem_verde) ? $mensagem_verde : "" ?></label>
 
                 <strong>Nome </strong><br>
                 <input id="nome" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
 
                 <strong>Documento </strong> <br>
-                <select id="tipo" name="tipo">
+                <select id="documento" name="documento">
                     <option value="*">Selecione seu documento</option>
                     <option value="1">CPF</option>
                     <option value="2">CNPJ</option>
@@ -31,10 +31,15 @@
                 <strong>E-mail </strong><br>
                 <input type="email" id="email" name="email" value="<?php echo "$email"?>" placeholder="Informe um e-mail..." ><br><br>
 
-                <strong>Telefone </strong><br>
-                <input type="text" id="telefone" name="telefone" value="<?php echo "$telefone"?>" placeholder="Informe seu telefone..." size = "10" maxlength= "10"><br><br>
+                <strong>Telefone </strong> <br>
+                <select id="telefone" name="telefone">
+                    <option value="*">Selecione o tipo de telefone</option>
+                    <option value="1">Telefone fixo</option>
+                    <option value="2">Celular</option>
+                </select>
+                
+                <input type="text" id="telefone_fixo" name="telefone_fixo" value="<?php echo "$telefone_fixo"?>" placeholder="Informe seu telefone fixo..." size = "10" maxlength= "10">
 
-                <strong>Celular </strong><br>
                 <input type="text" id="celular" name="celular" value="<?php echo "$celular"?>" placeholder="Informe seu celular..." size = "11" maxlength= "11"><br><br>
 
                 <strong>Logradouro </strong><br>
@@ -66,8 +71,8 @@
                         <?php } ?>
                 </select>
                 <br><br>
-                <button  type="submit" value="Submit" class="salvar">Salvar</button>
-                <button type= "submit" name="limpar" class="limpar">Limpar</button>
+                <button  type="submit" value="Submit" class="salvar" id="cadastrar" >Salvar</button>
+                <button type= "submit" name="limpar" class="limpar" >Limpar</button>
                 <br><br>
             </form>
         </div>    
