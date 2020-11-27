@@ -85,3 +85,17 @@ $('#cadastrar').click(function(){
         alert("Cadastro realizado com sucesso!!");
     }
 });
+
+$('#limpar').click(function(){
+    var mensagem;
+    var limpar = confirm("Todos os campos serão apagados!");
+    if(limpar == true){
+        mensagem = "ok"
+    }
+    else{
+        mensagem = "cancelar"
+        return true;
+    }
+    document.getElementById("limpar").innerHTML=limpar;
+    return true;
+});

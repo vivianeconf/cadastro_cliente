@@ -71,7 +71,7 @@
                 </select>
                 <br><br>
                 <button  type="submit" value="Submit" class="salvar" id="cadastrar" >Salvar</button>
-                <button type= "submit" name="limpar" class="limpar" >Limpar</button>
+                <button type= "submit" name="limpar" class="limpar" id="limpar" >Limpar</button>
                 <br><br>
             </form>
         </div>    

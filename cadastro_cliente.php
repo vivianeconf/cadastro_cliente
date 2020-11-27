@@ -5,12 +5,11 @@ $cidades = array("Erechim", "Fernandópolis", " Porto Alegre", "São Paulo", "Ri
 
 $erro = 0;
 if (!empty($_POST)) {
-                                                /** eh para gravar */
-    $eh_para_limpar = isset($_POST["limpar"]) ? true : false; // -> true
+                                                
+    $eh_para_limpar = isset($_POST["limpar"]) ? true : false;
 
-    if($eh_para_limpar == false) { // Clicou no gravar
+    if($eh_para_limpar == false) {
 
-        // Validar se os campos EXISTEM
         $nome = !empty($_POST["nome"]) ? $_POST["nome"] : null;
         $documento = !empty($_POST["documento"]) ? $_POST["documento"] : null;
         $cpf = !empty($_POST["cpf"]) ? $_POST["cpf"] : null;
@@ -30,7 +29,6 @@ if (!empty($_POST)) {
         $documento = !empty($cpf) ? $cpf : $cnpj;
         $telefone = !empty($telefone_fixo) ? $telefone_fixo : $celular;
 
-        // Validar a OBRIGATORIEDADE dos campos
         $mensagem = "";
     
         if(empty($nome)) {
