@@ -1,11 +1,8 @@
-  
-// Quando a página é carregada, ocultamos os dois campos: cpf e cnpj.
 $(document).ready(function () {
     $('#cpf').hide();
     $('#cnpj').hide();
 });
 
-// Quando o tipo for selecionado, mostramos o campo adequado
 $('#documento').change(function (e) { 
     e.preventDefault();
 
@@ -18,13 +15,12 @@ $('#documento').change(function (e) {
         $('#cnpj').show();
     }
 });
-// Quando a página é carregada, ocultamos os dois campos: cpf e cnpj.
+
 $(document).ready(function () {
     $('#telefone_fixo').hide();
     $('#celular').hide();
 });
 
-// Quando o tipo for selecionado, mostramos o campo adequado
 $('#telefone').change(function (e) { 
     e.preventDefault();
 
@@ -37,8 +33,6 @@ $('#telefone').change(function (e) {
         $('#celular').show();
     }
 });
-
-// Quando o botão for pressionado, enviaremos um ajax para o PHP
 
 $('#salvar').click(function (e) { 
     e.preventDefault();
@@ -70,6 +64,7 @@ $('#salvar').click(function (e) {
         }
     })
 });
+
 $('#cadastrar').click(function(){
     var nome = $("#nome").val();
     var documento = $("#documento").val();
