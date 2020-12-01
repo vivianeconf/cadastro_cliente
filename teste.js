@@ -90,14 +90,10 @@ $( "#formulario" ).submit(function(e ) {
             if (erro == 1) {
                 alert(respostaDoPHP["mensagem"]);
             } else if (erro == 0) {
-                alert("Deu super certo!");
+                alert("Cadastro realizado com sucesso!");
             }
         }
     });
-});
-
-$('#cadastrar').click(function(e){
-    alert("Clicou no botão cadastrar");
 });
 
 $('#limpar').click(function(e){
@@ -111,3 +107,7 @@ $('#limpar').click(function(e){
     }
 
 });
+
+$(document).ready( function () {
+    $('#tabela').DataTable();
+} );
