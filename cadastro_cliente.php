@@ -95,6 +95,12 @@ if (!empty($_POST)) {
             $mensagem .= "Favor selecione sua cidade...<br>"; 
             $erro = 1;
         }
+
+        echo json_encode(array(
+            "erro" => $erro,
+            "mensagem" => $mensagem
+        ));
+        return;
     }
 }
 if ($erro == 0) {

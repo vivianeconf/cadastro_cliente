@@ -34,68 +34,80 @@ $('#telefone').change(function (e) {
     }
 });
 
-$('#salvar').click(function (e) { 
+$( "#formulario" ).submit(function(e ) {
     e.preventDefault();
 
-    var dadosDoCliente = {
-        "nome": $('#nome').val(),
-        "documento": $('#documento').val(),
-        "cpf": $('#cpf').val(),
-        "cnpj": $('#cnpj').val(),
-        "email": $('#email').val(),
-        "telefone": $('#telefone').val(),
-        "telefone_fixo": $('#telefone_fixo').val(),
-        "celular": $('#celular').val(),
-        "logradouro": $('#logradouro').val(),
-        "numero": $('#numero').val(),
-        "bairro": $('#bairro').val(),
-        "cep": $('#cep').val(),
-        "estado": $('#estado').val(),
-        "cidade": $('#cidade').val()
+    // var formulario = $(this);
+
+    // $('#configform')[0].reset();
+    
+    var nome = $('#PRIMEIRO_NOME').val(); // Viviane
+    var documento = $('#documento').val(); // 1
+    var cpf = $('#cpf').val(); // 0910910910
+    var cnpj = $('#cnpj').val();
+    var email = $('#email').val();
+    var telefone = $('#telefone').val();
+    var telefone_fixo = $('#telefone_fixo').val();
+    var celular = $('#celular').val();
+    var logradouro = $('#logradouro').val();
+    var numero = $('#numero').val();
+    var bairro = $('#bairro').val();
+    var cep = $('#cep').val();
+    var estado = $('#estado').val();
+    var cidade = $('#cidade').val();
+
+    if(nome == "" || documento == "" || email == "" || telefone == "" || logradouro == "" || numero == "" || 
+    cep == "" || bairro == "" || estado == "" || cidade == ""){
+        alert("Preencha todos os campos!");
+        return true;
+    }
+
+    var usuarioDigitouEssasParada = {
+        "nome": nome,
+        "documento": documento,
+        "cpf": cpf,
+        "cnpj": cnpj,
+        "email": email,
+        "telefone": telefone,
+        "telefone_fixo": telefone_fixo,
+        "celular": celular,
+        "logradouro": logradouro,
+        "numero": numero,
+        "bairro": bairro,
+        "cep": cep,
+        "estado": estado,
+        "cidade": cidade
     };
 
     $.ajax({
         type: "post",
         url: "cadastro_cliente.php",
         dataType: "json",
-        data: dadosDoCliente,
-        success: function (respostaDoPHP) {
-            alert(cadastro_cliente.mensagem);
+        data: usuarioDigitouEssasParada,
+        success: function (respostaDoPHP) { 
+            // comunicou-se com sucesso com o backend
+            var erro = respostaDoPHP["erro"];
+            if (erro == 1) {
+                alert(respostaDoPHP["mensagem"]);
+            } else if (erro == 0) {
+                alert("Deu super certo!");
+            }
         }
-    })
+    });
 });
 
-$('#cadastrar').click(function(){
-    var nome = $("#nome").val();
-    var documento = $("#documento").val();
-    var email = $("#email").val();
-    var telefone = $("#telefone").val();
-    var logradouro = $("#logradouro").val();
-    var numero = $("#numero").val();
-    var cep = $("#cep").val();
-    var bairro = $("#bairro").val();
-    var estado = $("#estado").val();
-    var cidade = $("#cidade").val();
-
-    if(nome == "" || documento == "" || email == "" || telefone == "" || logradouro == "" || numero == "" || 
-    cep == "" || bairro == "" || estado == "" || cidade == ""){
-        alert("Preencha todos os campos!");
-        return true;
-    }else{
-        alert("Cadastro realizado com sucesso!!");
-    }
+$('#cadastrar').click(function(e){
+    alert("Clicou no botão cadastrar");
 });
 
-$('#limpar').click(function(){
+$('#limpar').click(function(e){
+    e.preventDefault();
+
     var mensagem;
     var limpar = confirm("Todos os campos serão apagados!");
+    console.log();
     if(limpar == true){
-        mensagem = "ok"
+
     }
-    else{
-        mensagem = "cancelar"
-        return true;
-    }
-    document.getElementById("limpar").innerHTML=limpar;
-    return true;
+
 });

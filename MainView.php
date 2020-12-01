@@ -9,12 +9,12 @@
         <div>
             <h2>Cadastro de cliente</h2>
 
-            <form action="cadastro_cliente.php" method="post" >
+            <form action="cadastro_cliente.php" method="post" id="formulario">
 
                 <label class= "vermelho"><?= isset($mensagem) ? $mensagem : "" ?></label>
 
                 <strong>Nome </strong><br>
-                <input id="nome" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
+                <input id="PRIMEIRO_NOME" type="text" name="nome" value="<?php echo "$nome"?>" placeholder="Informe um nome..."/><br><br>
 
                 <strong>Documento </strong> <br>
                 <select id="documento" name="documento">
@@ -70,8 +70,8 @@
                         <?php } ?>
                 </select>
                 <br><br>
-                <button  type="submit" value="Submit" class="salvar" id="cadastrar" >Salvar</button>
-                <button type= "submit" name="limpar" class="limpar" id="limpar" >Limpar</button>
+                <button id="cadastrar" type="submit" value="Submit" class="salvar">Salvar</button>
+                <button id="limpar" name="limpar" class="limpar">Limpar</button>
                 <br><br>
             </form>
         </div>    
