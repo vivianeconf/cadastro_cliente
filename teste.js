@@ -36,10 +36,6 @@ $('#telefone').change(function (e) {
 
 $( "#formulario" ).submit(function(e ) {
     e.preventDefault();
-
-    // var formulario = $(this);
-
-    // $('#configform')[0].reset();
     
     var nome = $('#PRIMEIRO_NOME').val(); // Viviane
     var documento = $('#documento').val(); // 1
@@ -99,15 +95,10 @@ $( "#formulario" ).submit(function(e ) {
 $('#limpar').click(function(e){
     e.preventDefault();
 
-    var mensagem;
-    var limpar = confirm("Todos os campos serão apagados!");
-    console.log();
-    if(limpar == true){
-
-    }
-
+    alert("Todos os campos preenchidos serão apagados.");
+    $('#formulario')[0].reset();
 });
 
 $(document).ready( function () {
-    $('#tabela').DataTable();
+    $('#tabela').DataTable({});
 } );

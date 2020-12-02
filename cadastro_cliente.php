@@ -1,7 +1,9 @@
 <?php
 
 $estados = array("Rio Grande do Sul", "Santa Catarina", "São Paulo", "Rio de Janeiro", "Mato Grosso do Sul");
-$cidades = array("Erechim", "Fernandópolis", " Porto Alegre", "São Paulo", "Rio de Janeiro", "Passo Fundo");
+$cidades = array("Erechim", "Fernandópolis", " Porto Alegre", "São Paulo", "Rio de Janeiro", "Passo Fundo", "Chapecó", 
+"Caxias do Sul", "Pelotas", "Gramado", "Canoas", "Florianópolis", "Blumenau", "Itajaí", "Jundiaí",
+"Ribeirão Preto", "Bauru", "Niterói", "Petrópolis", "Macaé", "Corumbá", "Campo Grande", "Bonito", "Ponta Porã");
 
 $erro = 0;
 if (!empty($_POST)) {

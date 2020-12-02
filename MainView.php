@@ -71,13 +71,124 @@
                 </select>
                 <br><br>
                 <button id="cadastrar" type="submit" value="Submit" class="salvar">Salvar</button>
-                <button id="limpar" name="limpar" class="limpar">Limpar</button>
+                <button id="limpar" name="limpar" class="limpar" >Limpar</button>
                 <br><br>
             </form>
-        </div>    
+        </div> 
+
+            <table id="tabela" class="display">
+                <h1>Tabela de cidades e estados disponíveis</h1>
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rio grande do Sul</td>
+                        <td>Erechim</td> 
+                    </tr>
+                    <tr>
+                        <td>Rio grande do Sul</td>
+                        <td>Passo Fundo</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Catarina</td>
+                        <td>Chapecó</td>
+                    </tr>
+                    <tr>
+                        <td>Rio Grande do Sul</td>
+                        <td>Porto Alegre</td>
+                    </tr>
+                    <tr>
+                        <td>Rio Grande do Sul</td>
+                        <td>Caxias do Sul</td>
+                    </tr>
+                    <tr>
+                        <td>Rio Grande do Sul</td>
+                        <td>Pelotas</td>
+                    </tr>
+                    <tr>
+                        <td>Rio Grande do Sul</td>
+                        <td>Gramado</td>
+                    </tr>
+                    <tr>
+                        <td>Rio Grande do Sul</td>
+                        <td>Canoas</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Catarina</td>
+                        <td>Florianópolis</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Catarina</td>
+                        <td>Blumenau</td>
+                    </tr>
+                    <tr>
+                        <td>Santa Catarina</td>
+                        <td>Itajaí</td>
+                    </tr>
+                    <tr>
+                        <td>São Paulo</td>
+                        <td>São Paulo</td>
+                    </tr>
+                    <tr>
+                        <td>São Paulo</td>
+                        <td>Jundiaí</td>
+                    </tr>
+                    <tr>
+                        <td>São Paulo</td>
+                        <td>Fernandópolis</td>
+                    </tr>
+                    <tr>
+                        <td>São Paulo</td>
+                        <td>Ribeirão Preto</td>
+                    </tr>
+                    <tr>
+                        <td>São Paulo</td>
+                        <td>Bauru</td>
+                    </tr>
+                    <tr>
+                        <td>Rio de Janeiro</td>
+                        <td>Rio de Janeiro</td>
+                    </tr>
+                    <tr>
+                        <td>Rio de Janeiro</td>
+                        <td>Niterói</td>
+                    </tr>
+                    <tr>
+                        <td>Rio de Janeiro</td>
+                        <td>Petrópolis</td>
+                    </tr>
+                    <tr>
+                        <td>Rio de Janeiro</td>
+                        <td>Macaé</td>
+                    </tr>
+                    <tr>
+                        <td>Mato Grosso do Sul</td>
+                        <td>Corumbá</td>
+                    </tr>
+                    <tr>
+                        <td>Mato Grosso do Sul</td>
+                        <td>Campo Grande</td>
+                    </tr>
+                    <tr>
+                        <td>Mato Grosso do Sul</td>
+                        <td>Ponta Porã</td>
+                    </tr>
+                    <tr>
+                        <td>Mato Grosso do Sul</td>
+                        <td>Bonito</td>
+                    </tr>
+                </tbody>
+            </table>
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    
         <script src="teste.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
 
     </body>
 </html>
