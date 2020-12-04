@@ -78,7 +78,7 @@
 
             <table id="tabela" class="display">
                 <h1>Tabela de cidades, estados e CEP disponíveis</h1>
-                <button id="novo_registro">Adicione um novo registro</button>
+                <button id="novo_registro" class="registro">Adicione um novo registro</button>
                 <thead>
                     <tr>
                         <th>Estado</th>
@@ -86,7 +86,7 @@
                         <th>CEP</th>
                     </tr>
                 </thead>
-                <tbody>
+                        <tbody>
             <tr>
                 <td>Rio grande do Sul</td>
                 <td>Erechim</td> 

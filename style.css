@@ -15,3 +15,6 @@ input[type=text], select { width: 35%; padding: 12px; border: 1px solid #ccc;}
 input[type=email]{ width: 35%; padding: 12px; border: 1px solid #ccc;}
 
 h1 {text-align: center;}
+
+.registro { background-color: #ccc; border: none; color: black; padding: 15px 32px; text-align: center;font-size: 16px;
+    margin: 4px 2px;}
