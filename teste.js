@@ -99,6 +99,23 @@ $('#limpar').click(function(e){
     $('#formulario')[0].reset();
 });
 
-$(document).ready( function () {
-    $('#tabela').DataTable({});
+$(document).ready(function() {
+    var t = $('#tabela').DataTable();
+    var estado = '';
+    var cidade = '';
+    var cep = '';
+ 
+    $('#novo_registro').on( 'click', function () {
+        t.row.add( [
+            estado,
+            cidade,
+            cep
+        ] ).draw( false );
+ 
+        estado++;
+        cidade++;
+        cep++;
+    } );
+ 
+    $('#novo_registro').click();
 } );
