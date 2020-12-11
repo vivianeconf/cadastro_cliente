@@ -1,10 +1,5 @@
 <?php
 
-$estados = array("Rio Grande do Sul", "Santa Catarina", "São Paulo", "Rio de Janeiro", "Mato Grosso do Sul");
-$cidades = array("Erechim", "Fernandópolis", " Porto Alegre", "São Paulo", "Rio de Janeiro", "Passo Fundo", "Chapecó", 
-"Caxias do Sul", "Pelotas", "Gramado", "Canoas", "Florianópolis", "Blumenau", "Itajaí", "Jundiaí",
-"Ribeirão Preto", "Bauru", "Niterói", "Petrópolis", "Macaé", "Corumbá", "Campo Grande", "Bonito", "Ponta Porã");
-
 $erro = 0;
 if (!empty($_POST)) {
                                                 
@@ -32,10 +27,17 @@ if (!empty($_POST)) {
         $telefone = !empty($telefone_fixo) ? $telefone_fixo : $celular;
 
         $mensagem = "";
-    
-        if(empty($nome)) {
+        $status = 201;
+
+        if(empty($nome)) {        
             $mensagem .= "Favor digitar o seu nome...<br>";
             $erro = 1;
+        } else {
+            if (gettype($nome) != 'string') {
+                $mensagem .= "Favor digitar somente letras...<br>";
+                $erro = 1;
+                $status = 400;
+            }
         }
    
         if (empty($cpf) && empty($cnpj)) {
@@ -100,7 +102,8 @@ if (!empty($_POST)) {
 
         echo json_encode(array(
             "erro" => $erro,
-            "mensagem" => $mensagem
+            "mensagem" => $mensagem,
+            "status" => $status
         ));
         return;
     }
