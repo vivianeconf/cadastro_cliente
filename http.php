@@ -2,7 +2,6 @@
 
 $cep = $_GET['cep'];
 
-
 $client = curl_init();
 
 curl_setopt($client, CURLOPT_URL, "https://api.postmon.com.br/v1/cep/".$cep);
@@ -12,8 +11,6 @@ curl_setopt($client, CURLOPT_RETURNTRANSFER , true);
 $cep = json_decode(curl_exec($client));
 
 curl_close($client);
-
-
 
 $obj = new stdClass;
 $obj->rua = $cep->logradouro;
